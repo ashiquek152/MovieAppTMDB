@@ -27,7 +27,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SEARCH_SCREEN,
-      page: () => const SearchScreenView(),
+      page: () =>  SearchScreenView(),
       binding: SearchScreenBinding(),
     ),
   ];

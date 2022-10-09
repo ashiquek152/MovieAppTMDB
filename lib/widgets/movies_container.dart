@@ -24,10 +24,10 @@ class MoviesContainer extends StatelessWidget {
                 width: Get.width,
                 fit: BoxFit.cover,
                 imageUrl:
-                    "https://image.tmdb.org/t/p/w500${movieModel.backdropPath}" ??
-                        "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png",
+                    "https://image.tmdb.org/t/p/w500${movieModel.backdropPath}",
                 placeholder: (context, url) =>
                     const Center(child: CircularProgressIndicator()),
+                    useOldImageOnUrlChange: true,
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),

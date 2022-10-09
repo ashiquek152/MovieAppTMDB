@@ -1,23 +1,34 @@
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:unique_games/app/data/api_services.dart';
+import 'package:unique_games/app/models/movie_model_model.dart';
 
 class SearchScreenController extends GetxController {
-  //TODO: Implement SearchScreenController
+  final searchFildcontroller = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  List<MovieModel> searchList = <MovieModel>[].obs;
+
+  Future<List<MovieModel>> fetchMovies() async {
+    return await APIservices.fetchMovies();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  searchMovies({required String query}) async {
+    try {
+      if (searchFildcontroller.text == "") {
+        searchList.clear();
+        update();
+      }
+      if (query == "") {
+        update();
+        return;
+      }
+      searchList.clear();
+      searchList = await APIservices.searchMovies(query: query);
+      update();
+    } catch (e) {
+      log(e.toString());
+    }
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
