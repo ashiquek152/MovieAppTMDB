@@ -5,11 +5,10 @@ import 'package:get/get.dart';
 import 'package:unique_games/app/models/movie_model_model.dart';
 import 'package:unique_games/widgets/snackbar.dart';
 
+import 'api_key.dart';
+
 class APIservices extends GetxController {
   static String BASE_URL = "https://api.themoviedb.org/3";
-  static String API_KEY = "3c12ddf4e10d971f7c8e87cb7dada16c";
-
-
   static final dio = Dio();
 
   static Future<List<MovieModel>> fetchMovies() async {

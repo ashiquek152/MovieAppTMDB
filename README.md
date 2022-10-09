@@ -1,16 +1,26 @@
-# unique_games
+# Movie app with TMDB
 
-A new Flutter project.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is an application fetches movie detail from TMDB API. I have used flutter framework with Get_cli to develop the application.
 
-A few resources to get you started if this is your first Flutter project:
+State managemnt tool : GetX
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This app consist of 3 screens 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Homes creen : shows a list of movies from tmdb api. On tap each movie will navigate to the details screen .
+
+2.Details screen : Shows the banner image of the movie and a small overview about the movie.
+
+3.Search screen : A screen with a search field . Displays movies which matches to the search inputs.
+
+ Packages used:
+
+  cached_network_image: ^3.2.2
+  dio: ^4.0.6
+  connectivity_plus: ^2.3.9
+  get:4.6.5^ 
+
+Font family : Poppins
